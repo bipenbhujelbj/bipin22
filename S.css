@@ -1,0 +1,658 @@
+/* GLOBAL STYLING */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe6f2); /* soft romantic gradient */
+    text-align: center;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* HEADER STYLING */
+header {
+    position: relative;
+    padding: 30px 20px;
+    margin-bottom: 40px;
+    animation: slideDownIn 0.8s ease-out;
+    background: linear-gradient(to right, rgba(255, 182, 193, 0.3), rgba(255, 192, 203, 0.3));
+    border-bottom: 3px solid rgba(255, 0, 102, 0.3);
+}
+
+/* EMOJI STICKER ANIMATIONS */
+.emoji-left {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 3rem;
+    animation: bounce 1.5s ease-in-out infinite, rotate 3s linear infinite;
+}
+
+.emoji-left-alt {
+    position: absolute;
+    left: 80px;
+    top: 15px;
+    font-size: 2.5rem;
+    animation: spin 4s linear infinite, float 3s ease-in-out infinite;
+}
+
+.emoji-right {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 3rem;
+    animation: bounce 1.5s ease-in-out infinite 0.2s, rotate 3s linear infinite;
+}
+
+.emoji-right-alt {
+    position: absolute;
+    right: 80px;
+    top: 15px;
+    font-size: 2.5rem;
+    animation: pulse 2s ease-in-out infinite, float 3s ease-in-out infinite 0.3s;
+}
+
+/* BOUNCE ANIMATION */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* ROTATE ANIMATION */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* SPIN ANIMATION */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* PULSE ANIMATION */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* SOFT FLOAT ANIMATION */
+@keyframes floatEmoji {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-15px) translateX(5px);
+    }
+    50% {
+        transform: translateY(-25px) translateX(-5px);
+    }
+    75% {
+        transform: translateY(-15px) translateX(5px);
+    }
+}
+
+/* FOOTER STYLING */
+footer {
+    position: relative;
+    padding: 30px 20px;
+    margin-top: 50px;
+    animation: slideUpIn 0.8s ease-out;
+    background: linear-gradient(to right, rgba(255, 182, 193, 0.3), rgba(255, 192, 203, 0.3));
+    border-top: 3px solid rgba(255, 0, 102, 0.3);
+}
+
+footer h1 {
+    font-size: 1.8rem;
+}
+
+footer .emoji-left {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 3rem;
+    animation: bounce 1.5s ease-in-out infinite, rotate 3s linear infinite;
+}
+
+footer .emoji-left-alt {
+    position: absolute;
+    left: 80px;
+    bottom: 15px;
+    font-size: 2.5rem;
+    animation: spin 4s linear infinite, floatEmoji 4s ease-in-out infinite;
+}
+
+footer .emoji-right {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 3rem;
+    animation: bounce 1.5s ease-in-out infinite 0.2s, rotate 3s linear infinite;
+}
+
+footer .emoji-right-alt {
+    position: absolute;
+    right: 80px;
+    bottom: 15px;
+    font-size: 2.5rem;
+    animation: pulse 2s ease-in-out infinite, floatEmoji 4s ease-in-out infinite 0.3s;
+}
+
+/* SLIDE DOWN ANIMATION FOR HEADER */
+@keyframes slideDownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SLIDE UP ANIMATION FOR FOOTER */
+@keyframes slideUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+header h1 {
+    animation: glow 2s ease-in-out infinite alternate, float 3s ease-in-out infinite;
+}
+
+footer h1 {
+    animation: glow 2s ease-in-out infinite alternate, float 3s ease-in-out infinite;
+}
+
+/* CONTAINER FOR ALL CONTENT */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* MAIN TITLE */
+h1 {
+    font-size: 3.5rem;
+    color: #ff0066;
+    margin: 0;
+    padding: 20px;
+    text-shadow: 3px 3px 15px rgba(255, 182, 193, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+    letter-spacing: 2px;
+}
+
+/* GLOW ANIMATION FOR TITLE */
+@keyframes glow {
+    from { text-shadow: 2px 2px 10px #ff99cc, -2px -2px 10px #ff99cc; }
+    to { text-shadow: 4px 4px 20px #ff3399, -4px -4px 20px #ff3399; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PHOTO BOX CONTAINER */
+.photo-box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    animation: slideIn 0.8s ease-out;
+}
+
+/* PHOTO MEMORY CARD */
+.photo {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.photo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* IMAGE CONTAINER */
+.image {
+    flex: 0 0 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.image img:hover {
+    transform: scale(1.08) rotate(1deg);
+}
+
+/* STICKER EMOJI ON PHOTOS & TEXT */
+.image::after {
+    content: "🎉";
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    font-size: 2.4rem;
+    pointer-events: none;
+    transform-origin: center;
+    animation: floatEmoji 4s ease-in-out infinite, rotate 6s linear infinite;
+    text-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.photo > div:not(.image) {
+    position: relative;
+}
+
+.photo > div:not(.image)::before {
+    content: "💫";
+    position: absolute;
+    left: -18px;
+    top: -10px;
+    font-size: 1.8rem;
+    pointer-events: none;
+    animation: floatEmoji 5s ease-in-out infinite;
+    opacity: 0.95;
+}
+
+header h1 {
+    position: relative;
+}
+
+header h1::after {
+    content: "💖";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    pointer-events: none;
+    animation: floatEmoji 4s ease-in-out infinite, pulse 3s ease-in-out infinite;
+}
+
+/* Reduce sticker sizes on small screens */
+@media screen and (max-width: 768px) {
+    .image::after { font-size: 1.8rem; top: -8px; right: -8px; }
+    .photo > div:not(.image)::before { font-size: 1.4rem; left: -12px; top: -6px; }
+    header h1::after { font-size: 1.5rem; top: -12px; }
+}
+
+/* TEXT CONTENT STYLING */
+.photo > div:not(.image) {
+    flex: 1;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.photo:hover > div:not(.image) {
+    color: #ff0066;
+    background: rgba(255, 182, 193, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #ff0066;
+}
+
+.photo p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.photo:hover p {
+    color: #ff0066;
+}
+
+.photo P {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.photo:hover P {
+    color: #ff0066;
+}
+
+.photo P {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* MEMORY CARD STYLING */
+.memory-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT FOR MEMORY CARD */
+.memory-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* IMAGES STYLING */
+.memory-card img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.memory-card img:hover {
+    transform: scale(1.05);
+}
+
+/* PARAGRAPH TEXT */
+.memory-card p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #444;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* FINAL MESSAGE */
+.final-message {
+    font-size: 2.2rem;
+    color: #ff0066;
+    margin-top: 50px;
+    text-shadow: 2px 2px 15px rgba(255, 182, 193, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* SECTION STYLING */
+section {
+    width: 100%;
+    padding: 20px;
+}
+
+/* RESPONSIVE DESIGN FOR TABLETS */
+@media screen and (max-width: 1024px) {
+    .emoji-left, .emoji-right {
+        font-size: 2rem;
+    }
+    
+    .emoji-left-alt, .emoji-right-alt {
+        font-size: 1.8rem;
+    }
+    
+    h1 { 
+        font-size: 2.8rem;
+    }
+    
+    .photo {
+        padding: 25px;
+        gap: 20px;
+    }
+    
+    .image {
+        flex: 0 0 40%;
+    }
+    
+    .photo p, .photo P {
+        font-size: 1.1rem;
+    }
+    
+    .photo:hover > div:not(.image) {
+        color: #ff0066;
+        background: rgba(255, 182, 193, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #ff0066;
+    }
+}
+
+/* RESPONSIVE DESIGN FOR MOBILE */
+@media screen and (max-width: 768px) {
+    .emoji-left, .emoji-right {
+        font-size: 1.8rem !important;
+    }
+    
+    .emoji-left-alt, .emoji-right-alt {
+        font-size: 1.4rem !important;
+        left: 60px !important;
+        right: 60px !important;
+    }
+    
+    h1 { 
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 10px rgba(255, 182, 193, 0.8);
+    }
+    
+    header {
+        padding: 30px 20px 40px 20px;
+        margin-bottom: 20px;
+        animation: slideDownIn 0.8s ease-out;
+    }
+    
+    footer {
+        padding: 40px 20px 30px 20px;
+        margin-top: 30px;
+        animation: slideUpIn 0.8s ease-out;
+    }
+    
+    footer h1 {
+        font-size: 1.4rem;
+    }
+    
+    .photo {
+        flex-direction: column !important;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 15px;
+    }
+    
+    .photo:hover,
+    .photo:active {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+    
+    .photo:hover > div:not(.image),
+    .photo:active > div:not(.image) {
+        color: #ff0066;
+        background: rgba(255, 182, 193, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #ff0066;
+    }
+    
+    .image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .image img {
+        max-width: 100%;
+        max-height: 350px;
+    }
+    
+    .photo p, .photo P {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .photo-box {
+        gap: 20px;
+    }
+    
+    section {
+        padding: 10px;
+    }
+}
+
+/* RESPONSIVE DESIGN FOR SMALL PHONES */
+@media screen and (max-width: 480px) {
+    .emoji-left, .emoji-right {
+        font-size: 1.5rem !important;
+    }
+    
+    .emoji-left-alt, .emoji-right-alt {
+        font-size: 1.2rem !important;
+        left: 50px !important;
+        right: 50px !important;
+    }
+    
+    h1 { 
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .photo {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .photo:hover,
+    .photo:active {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+    
+    .photo:hover > div:not(.image),
+    .photo:active > div:not(.image) {
+        color: #ff0066;
+        background: rgba(255, 182, 193, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #ff0066;
+    }
+    
+    .image img {
+        max-height: 280px;
+    }
+    
+    .photo p, .photo P {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .memory-card p {
+        font-size: 1rem;
+    }
+    
+    .final-message {
+        font-size: 1.6rem;
+    }
+}
+
+/* PARTY EFFECTS: CONFETTI + HEARTS */
+#effects {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    border-radius: 2px;
+    opacity: 0.95;
+    transform-origin: center;
+    animation-name: confetti-fall, confetti-tilt;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: 1, infinite;
+}
+
+@keyframes confetti-fall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0.9; }
+}
+
+@keyframes confetti-tilt {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.heart {
+    position: absolute;
+    bottom: -10px;
+    color: #ff4d88;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    animation: heart-float 5s ease-in forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes heart-float {
+    0% { transform: translateY(0) scale(0.9) translateX(0); opacity: 1; }
+    30% { transform: translateY(-20vh) scale(1.05) translateX(-6px); opacity: 0.95; }
+    60% { transform: translateY(-45vh) scale(1.1) translateX(6px); opacity: 0.8; }
+    100% { transform: translateY(-95vh) scale(1.2) translateX(0); opacity: 0; }
+}
+
+/* small screen adjustments for effects */
+@media screen and (max-width: 480px) {
+    .confetti { display: block; }
+    .heart { animation-duration: 4s; }
+}
