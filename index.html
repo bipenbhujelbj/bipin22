@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Our Special Date 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe6f2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .header-emojis {
+            font-size: 3.5rem;
+            animation: bounce-emoji 1.5s ease-in-out infinite;
+        }
+
+        .emoji-1 { animation-delay: 0s; }
+        .emoji-2 { animation-delay: 0.2s; }
+        .emoji-3 { animation-delay: 0.4s; }
+
+        @keyframes bounce-emoji {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.8s ease-out;
+            border: 3px solid rgba(255, 0, 102, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .box h2 {
+            color: #ff0066;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 15px;
+            font-size: 1.1rem;
+            margin: 0;
+            border: 2px solid #ffb6c1;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #ff0066;
+            box-shadow: 0 0 15px rgba(255, 0, 102, 0.3);
+            transform: scale(1.02);
+        }
+
+        input::placeholder {
+            color: #ccc;
+            letter-spacing: 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff0066, #ff3399);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff3399, #ff0066);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 102, 0.4);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.3);
+        }
+
+        .message {
+            color: #ff0066;
+            font-size: 1.1rem;
+            font-weight: bold;
+            min-height: 25px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error {
+            color: #ff0066;
+        }
+
+        .success {
+            color: #00bb00;
+        }
+
+        .footer-emojis {
+            font-size: 2.5rem;
+            animation: float-emoji 3s ease-in-out infinite;
+        }
+
+        .emoji-f1 { animation-delay: 0s; }
+        .emoji-f2 { animation-delay: 0.3s; }
+        .emoji-f3 { animation-delay: 0.6s; }
+
+        @keyframes float-emoji {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        /* RESPONSIVE DESIGN FOR TABLETS */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                gap: 20px;
+            }
+
+            .header-emojis {
+                font-size: 3rem;
+            }
+
+            .box {
+                padding: 35px 25px;
+            }
+
+            .box h2 {
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+
+            input {
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .footer-emojis {
+                font-size: 2rem;
+            }
+        }
+
+        /* RESPONSIVE DESIGN FOR MOBILE */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                gap: 15px;
+            }
+
+            .header-emojis {
+                font-size: 2.5rem;
+            }
+
+            .box {
+                padding: 30px 20px;
+                border-radius: 15px;
+            }
+
+            .box h2 {
+                font-size: 1.4rem;
+                margin-bottom: 18px;
+            }
+
+            .input-group {
+                gap: 12px;
+                margin-bottom: 15px;
+            }
+
+            input {
+                padding: 12px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+
+            .button-group {
+                gap: 8px;
+            }
+
+            button {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+
+            .message {
+                font-size: 1rem;
+                min-height: 22px;
+            }
+
+            .footer-emojis {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-emojis">
+            <span class="emoji-1">💖</span>
+            <span class="emoji-2">💕</span>
+            <span class="emoji-3">💖</span>
+        </div>
+
+        <div class="box">
+            <h2>💝 Enter Our Anniversary Date 💝</h2>
+            <div class="input-group">
+                <input type="text" id="dateInput" placeholder="DD-MM-YYYY" maxlength="10">
+            </div>
+            <div class="button-group">
+                <button onclick="checkDate()">🔓 Unlock</button>
+            </div>
+            <p id="message" class="message"></p>
+        </div>
+
+        <div class="footer-emojis">
+            <span class="emoji-f1">🎂</span>
+            <span class="emoji-f2">🎉</span>
+            <span class="emoji-f3">🎂</span>
+        </div>
+    </div>
+
+    <script>
+        function checkDate() {
+            let enteredDate = document.getElementById("dateInput").value;
+            let correctDate = "27-12-2081";   // 🔴 CHANGE THIS TO YOUR REAL DATE
+            let messageEl = document.getElementById("message");
+
+            if (enteredDate === correctDate) {
+                messageEl.innerText = "✅ Access Granted!";
+                messageEl.classList.remove("error");
+                messageEl.classList.add("success");
+                setTimeout(() => {
+                    window.location.href = "birthday.html";
+                }, 500);
+            } else {
+                messageEl.innerText = "❌ Wrong date! Try again 😢";
+                messageEl.classList.remove("success");
+                messageEl.classList.add("error");
+                document.getElementById("dateInput").value = "";
+                document.getElementById("dateInput").focus();
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById("dateInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkDate();
+            }
+        });
+    </script>
+
+</body>
+</html>
